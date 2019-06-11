@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>ItemID</th>
+                    <th>ItemName</th>
+                    <th>ItemPrice</th>
+                    <th>ItemQuantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="items:${itemsList}">
+                    <td th:text="${items.itemID}"></td>
+                    <td th:text="${items.itemName}"></td>
+                    <td th:text="${items.itemPrice}"></td>
+                    <td th:text="${items.itemQuantity}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
