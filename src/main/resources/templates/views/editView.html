@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit/Add Page</title>
+</head>
+<body>
+<div>
+    <form method="post" th:object="${item}"> <!--The object name is same as the one passed in the model.-->
+        <input type="hidden" name="itemId" th:field="${item.itemId}"/>
+        <label>itemName</label>
+        <input type="text" name="itemName" th:field="${item.itemName}">
+        <label>itemPrice</label>
+        <input type="text" name="itemPrice" th:field="${item.itemPrice}">
+        <label>itemQuantity</label>
+        <input type="text" name="itemQuantity" th:field="${item.itemQuantity}">
+        <button th:href="@{/inventory}">Save</button>
+    </form>
+</div>
+</body>
+</html>

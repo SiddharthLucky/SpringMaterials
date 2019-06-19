@@ -7,11 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class itemService
-{
+public class itemService {
+    //All the methods are part of Physically declaring the data.
     //Method to get All items in the repository.
-    public List<items> getAllItems()
-    {
+    public List<items> getAllItems() {
         List<items> itemsList = new ArrayList<>();
         itemsList.add(new items(1, "item1", 1.00, 1));
         itemsList.add(new items(2, "item2", 2.10, 2));
@@ -21,14 +20,11 @@ public class itemService
     }
 
     //Method to filter the items based on user given ID
-    public items getItemByID(int itemID)
-    {
+    public items getItemByID(int itemID) {
         itemService itemService = new itemService();
         List<items> itemListHolder = itemService.getAllItems();
-        for(items itemHolder : itemListHolder)
-        {
-            if(itemHolder.getItemID() == itemID)
-            {
+        for (items itemHolder : itemListHolder) {
+            if (itemHolder.getItemID() == itemID) {
                 return itemHolder;
             }
         }

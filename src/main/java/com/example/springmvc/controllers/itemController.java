@@ -12,14 +12,12 @@ import java.util.List;
 
 @Controller
 @RequestMapping(value = "/inventory")
-public class itemController
-{
+public class itemController {
     @Autowired
     itemService itemService;
 
-    @RequestMapping(value = {"/all",""})
-    public String getAllItems(Model model)
-    {
+    @RequestMapping(value = {"/all", ""})
+    public String getAllItems(Model model) {
         List<items> itemListHolder = itemService.getAllItems();
         model.addAttribute("itemsList", itemListHolder);
         model.addAttribute("pageHeading", "Item Inventory");
@@ -27,8 +25,7 @@ public class itemController
     }
 
     @RequestMapping(value = "/items/{itemID}")
-    public String getItemByItemID(@PathVariable("itemID") int itemID, Model model)
-    {
+    public String getItemByItemID(@PathVariable("itemID") int itemID, Model model) {
         items itemHolder = itemService.getItemByID(itemID);
         model.addAttribute("itemsList", itemHolder);
         return "views/itemsView";

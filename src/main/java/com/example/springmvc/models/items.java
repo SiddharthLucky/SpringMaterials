@@ -1,7 +1,15 @@
 package com.example.springmvc.models;
 
-public class items
-{
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class items {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int itemID;
     private String itemName;
     private double itemPrice;
@@ -37,6 +45,9 @@ public class items
 
     public void setItemQuantity(int itemQuantity) {
         this.itemQuantity = itemQuantity;
+    }
+
+    public items() {
     }
 
     public items(int itemID, String itemName, double itemPrice, int itemQuantity) {
